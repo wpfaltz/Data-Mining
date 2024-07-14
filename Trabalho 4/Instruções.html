@@ -1,0 +1,85 @@
+<div class="no-overflow" id="yui_3_18_1_1_1720377255346_86"><p dir="ltr" style="text-align: left;"></p>
+<h3>Quarto trabalho - Cluster</h3>
+<p id="yui_3_18_1_1_1720377255346_85">O conjunto de dados MovieLens 1M é um conjunto popular para análise e pesquisa em sistemas de recomendação de filmes. Ele foi criado pela GroupLens Research, um grupo de pesquisa da Universidade de Minnesota. O conjunto contém 1000.000 avaliações de filmes feitas por cerca de 6000 usuários sobre +/- 3000 filmes. As avaliações estão em uma escala de 1 a 5, e cada usuário avaliou pelo menos 20 filmes.</p>
+<p>Os dados estão divididos em cinco arquivos de texto principais:</p>
+<ol>
+    <li>
+        <p>u.data: contém as avaliações dos usuários, cada linha representa uma avaliação no formato <code>user_id | movie_id | rating | timestamp</code>.</p>
+    </li>
+    <li>
+        <p>u.item: contém informações dos filmes, incluindo o título, data de lançamento, gênero e outros detalhes.</p>
+    </li>
+    <li>
+        <p>u.user: contém informações demográficas sobre os usuários, como idade, sexo, ocupação e CEP.</p>
+    </li>
+    <li>
+        <p>u.genre: contém uma lista de gêneros de filmes.</p>
+    </li>
+    <li>
+        <p>u.occupation: contém uma lista de ocupações dos usuários.</p>
+    </li>
+</ol>
+<p>Não iremos utilizar os arquivos 3, 4 e 5. Você pode obter o conjunto de dados MovieLens 1M no seguinte link:&nbsp;</p>
+<ul>
+    
+    <li><a href="https://files.grouplens.org/datasets/movielens/">https://files.grouplens.org/datasets/movielens/</a></li></ul><div>Baixe o <strong>README</strong> e o arquivo <strong>ml-1m.zip</strong><br></div><ul>
+</ul>
+<p>Inclua no seu trabalho o comando para baixar esses dois conjuntos de dados e guardá-los em memória. Você pode salvar uma cópia local, mas deve incluir o comando para baixá-los da internet (e comentar esse comando). <br></p>
+<p>O trabalho deve ser entregue como um notebook Jupyter, em Python.</p>
+<p></p>
+<h5>Sigam as instruções abaixo:</h5>
+<div id="yui_3_18_1_1_1720377255346_91"><br></div>
+<div>
+    <ol>
+        <li>Importe as bibliotecas necessárias:</li>
+    </ol>
+</div>
+<div>
+    <ol start="2">
+        <li>
+            <p>Crie seções no notebook para organizar cada etapa do exercício:</p>
+            <ul>
+                <li>Análise exploratória dos dados: <ul>
+                        <li>Verifique as informações básicas, como quantidade de filmes, usuários e avaliações.</li>
+                        <li>Utilize gráficos para visualizar a distribuição das avaliações, gêneros e quantidade de filmes por ano.</li>
+                    </ul><br></li>
+                <li>Pré-processamento dos dados:<ul>
+                        <li>Verifique se há algum valor duplicado<br></li>
+                        <li>Normalize os dados, se necessário.</li>
+                    </ul>
+                </li>
+                <li>Cálculo das matrizes de distâncias</li>
+                <li>Aplicação dos algoritmos de clusterização<ul>
+                        <li>K-means</li>
+                        <li>DBSCAN</li>
+                        <li>Clustering hierárquico (<em>Agglomerative</em> ou <em>Divisive</em>)</li>
+                    </ul>
+                </li>
+                <li>Análise da Variação do número de clusters</li><li>Remoção de Outliers (defina critérios)<br></li>
+                <li>Redução de dimensionalidade</li>
+                <li>Interpretação dos clusters</li>
+                <li>Comparação dos resultados</li>
+                <li>Conclusão</li>
+            </ul>
+        </li>
+        <li>
+            <p>Use células de texto (Markdown) para descrever cada etapa e, em seguida, células de código para implementar cada etapa.</p>
+        </li>
+        <li>
+            <p>Ao criar gráficos, certifique-se de incluir rótulos e legendas adequadas para facilitar a compreensão.</p>
+        </li>
+        <li>
+            <p>Ao analisar os resultados, use células de texto para discutir suas descobertas e conclusões.</p>
+        </li>
+        <li>
+            <p>Ao final do notebook, escreva uma conclusão geral, destacando as principais descobertas, desafios e possíveis melhorias.</p>
+        </li>
+        <li>
+            <p>Antes de entregar, verifique se todas as células foram executadas na ordem correta e que o notebook está bem organizado.</p>
+        </li>
+        <li>
+            <p>Realize a análise com e sem redução da dimensionalidade:</p><ul><li>Sem redução de dimensionalidade: Utilize a matriz de distâncias pré-calculada.</li><li>
+                    Com redução de dimensionalidade: Aplique PCA e SVD nos dados e analise os resultados.
+                </li><li>Plote os valores da matriz diagonal da decomposição SVD.</li></ul><br>Interprete os resultados obtidos em cada clusterização e identifique 
+alguns clusters com base nos filmes, como filmes de ficção científica ou
+ de terror.</li></ol></div></div>

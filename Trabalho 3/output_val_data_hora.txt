@@ -1,0 +1,13 @@
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-11\\treino-2024-05-11_08.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-11\\treino-2024-05-11_18.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-11\\treino-2024-05-11_23.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-12\\treino-2024-05-12_09.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-12\\treino-2024-05-12_19.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-13\\treino-2024-05-13_08.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-13\\treino-2024-05-13_18.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-13\\treino-2024-05-13_23.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-14\\treino-2024-05-14_09.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-14\\treino-2024-05-14_19.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-15\\treino-2024-05-15_08.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-15\\treino-2024-05-15_18.csv';
+\COPY "val_data_hora" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-15\\treino-2024-05-15_23.csv';

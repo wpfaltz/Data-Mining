@@ -1,0 +1,5 @@
+\COPY "val_latitude_longitude" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-11\\treino-2024-05-11_13.csv';
+\COPY "val_latitude_longitude" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-12\\treino-2024-05-12_14.csv';
+\COPY "val_latitude_longitude" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-13\\treino-2024-05-13_13.csv';
+\COPY "val_latitude_longitude" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-14\\treino-2024-05-14_14.csv';
+\COPY "val_latitude_longitude" FROM 'C:\\Users\\wpett\\Downloads\\Trabalho 3 - Data Mining\\treino-2024-05-15\\treino-2024-05-15_13.csv';

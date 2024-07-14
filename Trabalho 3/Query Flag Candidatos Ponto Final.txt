@@ -1,0 +1,68 @@
+SELECT linha, ordem, latitude, longitude, tsp_h, prev_datahora, prev_latitude, prev_longitude, time_diff, distance_diff, time_accumulator, distance_accumulator, ST_Buffer(ST_MakePoint(longitude, latitude)::geography, 30)::geometry AS geom, flag FROM (WITH converted_data AS (
+    SELECT
+        *,
+        to_timestamp(tsp_d || ' ' || tsp_h, 'YYYY-MM-DD HH24:MI:SS') AS datahora_datetime
+    FROM
+        train_data
+    WHERE
+        linha = '100'
+		AND (tsp_h BETWEEN '06:00:00' AND '22:59:59')
+),
+ordered_data AS (
+    SELECT
+        *,
+        LAG(datahora_datetime, 1) OVER (PARTITION BY ordem ORDER BY datahora_datetime) AS prev_datahora,
+        LAG(latitude, 1) OVER (PARTITION BY ordem ORDER BY datahora_datetime) AS prev_latitude,
+        LAG(longitude, 1) OVER (PARTITION BY ordem ORDER BY datahora_datetime) AS prev_longitude
+    FROM
+        converted_data
+),
+calculated_data AS (
+    SELECT
+        *,
+        EXTRACT(EPOCH FROM (datahora_datetime - prev_datahora)) AS time_diff,
+        ST_Distance(
+            ST_SetSRID(ST_MakePoint(longitude, latitude), 4326)::geography,
+            ST_SetSRID(ST_MakePoint(prev_longitude, prev_latitude), 4326)::geography
+        ) AS distance_diff
+    FROM
+        ordered_data
+),
+marked_data AS (
+    SELECT
+        *,
+        CASE
+            WHEN distance_diff > 30 THEN 1
+            ELSE 0
+        END AS movement_flag
+    FROM
+        calculated_data
+),
+segmented_data AS (
+    SELECT
+        *,
+        SUM(movement_flag) OVER (PARTITION BY ordem ORDER BY datahora_datetime) AS segment
+    FROM
+        marked_data
+),
+accumulated_data AS (
+    SELECT
+        *,
+        SUM(CASE WHEN movement_flag = 0 THEN time_diff ELSE 0 END) OVER (PARTITION BY ordem, segment ORDER BY datahora_datetime ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS time_accumulator,
+        SUM(CASE WHEN movement_flag = 0 THEN distance_diff ELSE 0 END) OVER (PARTITION BY ordem, segment ORDER BY datahora_datetime ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS distance_accumulator
+    FROM
+        segmented_data
+    WHERE
+        time_diff IS NOT NULL
+)
+SELECT
+    *,
+    CASE
+        WHEN time_accumulator > 600 AND time_accumulator < 3700 AND distance_accumulator < 100 THEN 'ponto_final'
+        WHEN time_accumulator > 3700 AND distance_accumulator < 500 THEN 'garagem'
+        ELSE NULL
+    END AS flag
+FROM
+    accumulated_data
+ORDER BY
+    ordem, datahora_datetime) AS registros_com_flag WHERE flag='ponto_final' AND distance_diff = '0';

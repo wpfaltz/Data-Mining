@@ -1,0 +1,6 @@
+Prever data_hora:
+'treino-2024-05-11_08.csv', 'treino-2024-05-11_18.csv', 'treino-2024-05-11_23.csv', 'treino-2024-05-12_09.csv', 'treino-2024-05-12_19.csv', 'treino-2024-05-13_08.csv', 'treino-2024-05-13_18.csv', 'treino-2024-05-13_23.csv', 'treino-2024-05-14_09.csv', 'treino-2024-05-14_19.csv', 'treino-2024-05-15_08.csv', 'treino-2024-05-15_18.csv', 'treino-2024-05-15_23.csv'
+
+
+Prever latitude, longitude:
+'treino-2024-05-11_13.csv', 'treino-2024-05-12_14.csv', 'treino-2024-05-13_13.csv', 'treino-2024-05-14_14.csv', 'treino-2024-05-15_13.csv'
